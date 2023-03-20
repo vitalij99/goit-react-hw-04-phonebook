@@ -1,0 +1,38 @@
+.title {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #fffb00;
+}
+
+.input {
+    display: block;
+    width: 200px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(1, 59, 147);
+    color: #fffb00;
+    outline-color: #fffb00;
+}
+
+
+.button {
+    width: 120px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgb(1, 59, 147);
+    color: #fffb00;
+    text-transform: uppercase;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #004cff;    
+    box-shadow: 0px 0px 5px 0px #ffe819;
+}
