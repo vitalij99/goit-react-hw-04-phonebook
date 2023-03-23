@@ -14,7 +14,7 @@ export const App = () => {
         JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY ?? []))
     );
 
-    const [filter, setFilter] = useState('');
+    const [filterContacts, setFilter] = useState('');
     const firstLoad = useRef(false);
 
     useEffect(() => {
@@ -61,13 +61,12 @@ export const App = () => {
         setFilter(event.target.value);
     };
     const visibleContact = () => {
-        const normalizeFilter = filter.toLowerCase();
+        const normalizeFilter = filterContacts.toLowerCase();
 
         return contacts.filter(contact =>
             contact.name.toLowerCase().includes(normalizeFilter)
         );
     };
-    const filterContact = visibleContact();
 
     return (
         <>
@@ -76,11 +75,11 @@ export const App = () => {
             </Section>
             <Section title="Contacts">
                 {contacts.length > 1 && (
-                    <Filter value={filter} onChange={inputFilter} />
+                    <Filter value={filterContacts} onChange={inputFilter} />
                 )}
                 {contacts.length > 0 ? (
                     <ContactList
-                        contacts={filterContact}
+                        contacts={visibleContact()}
                         deleteContact={deleteContact}
                     />
                 ) : (
